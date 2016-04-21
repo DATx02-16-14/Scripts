@@ -10,7 +10,7 @@ class Tests
   include GameTest
   def chat
     threads = []
-    for i in 0...5
+    for i in 0...30
       threads << Thread.new do
         browser = Watir::Browser.new :chrome
         browser.goto 'http://hastings.se'
