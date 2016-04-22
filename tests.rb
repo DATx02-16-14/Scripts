@@ -11,11 +11,12 @@ class Tests
   include GameTest
   def chat
     threads = []
-    for i in 0...5
+    for i in 0...30
       threads << Thread.new do
         headless = Headless.new
         headless.start
-        browser = Watir::Browser.start 'http://hastings.se'
+        browser = Watir::Browser.new :chrome
+        browser.goto 'http://hastings.se'
         Random.new_seed
         prng = Random.new
         browser.alert.set "Watir" + prng.rand(10000).to_s
