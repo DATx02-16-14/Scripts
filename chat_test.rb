@@ -2,6 +2,7 @@
 
 # Basic script that opens 10 sessions to hastings.se and writes to the chat 25 times.
 require 'watir-webdriver'
+require 'headless'
 
 module ChatTest
   def chat_test browser

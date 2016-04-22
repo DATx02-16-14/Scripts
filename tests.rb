@@ -1,5 +1,6 @@
 #! /usr/bin/ruby
 require 'watir-webdriver'
+require 'headless'
 
 # Our test scripts
 require './chat_test.rb'
@@ -10,10 +11,11 @@ class Tests
   include GameTest
   def chat
     threads = []
-    for i in 0...30
+    for i in 0...5
       threads << Thread.new do
-        browser = Watir::Browser.new :chrome
-        browser.goto 'http://hastings.se'
+        headless = Headless.new
+        headless.start
+        browser = Watir::Browser.start 'http://hastings.se'
         Random.new_seed
         prng = Random.new
         browser.alert.set "Watir" + prng.rand(10000).to_s

@@ -5,6 +5,7 @@ GEM
       ffi (~> 1.0, >= 1.0.11)
     commonwatir (4.0.0)
     ffi (1.9.10)
+    headless (2.2.3)
     rubyzip (1.2.0)
     selenium-webdriver (2.53.0)
       childprocess (~> 0.5)
@@ -21,7 +22,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  headless
   watir
+  watir-webdriver
 
 BUNDLED WITH
    1.11.2
