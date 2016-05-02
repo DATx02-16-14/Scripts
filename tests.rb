@@ -11,7 +11,7 @@ class Tests
   include GameTest
   def chat
     threads = []
-    for i in 0...30
+    (0..10).each do
       threads << Thread.new do
         headless = Headless.new
         headless.start
@@ -19,7 +19,7 @@ class Tests
         browser.goto 'http://hastings.se'
         Random.new_seed
         prng = Random.new
-        browser.alert.set "Watir" + prng.rand(10000).to_s
+        browser.alert.set "Watir " + prng.rand(10000).to_s
         browser.alert.ok
         browser.text_field(id: 'input-field-main').wait_until_present
 
