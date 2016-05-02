@@ -5,9 +5,9 @@ require 'watir-webdriver'
 require 'headless'
 
 module ChatTest
-  def chat_test browser
+  def chat_test browser, messageCount
     browser.text_field(id: 'input-field-main').wait_until_present 100
-    (1..25).each do
+    (1..messageCount).each do
       browser.text_field(id: 'input-field-main').set "Chatting whoho"
       browser.text_field(id: 'input-field-main').send_keys :enter
     end

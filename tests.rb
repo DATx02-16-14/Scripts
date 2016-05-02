@@ -25,11 +25,11 @@ class Tests
 
         case prng.rand(2)
         when 0
-          chat_test browser
+          chat_test browser 25
         when 1
           create_game browser
         else
-          chat_test browser
+          chat_test browser 25
         end
         browser.close
       end
