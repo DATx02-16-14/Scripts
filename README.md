@@ -6,6 +6,3 @@ The ruby suite here is written using the gems `watir-webdriver` and `headless`
 
 ## Headless
 `headless` requires xvfb. On Arch linux it is installed from the official repositories in the package `xorg-server-xvfb`.
-
-# JavaScript
-The javascript suite here is written using `phantomjs`. Execute the scripts by running `phantomjs file.js`
