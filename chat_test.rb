@@ -17,7 +17,7 @@ module ChatTest
     browser.text_field(id: 'input-field-main').set "/join " + chatName
     browser.text_field(id: 'input-field-main').send_keys :enter
     browser.text_field(id: 'input-field-' + chatName).wait_until_present 100
-    (1..10).each do
+    (1..messageCount).each do
       browser.text_field(id: 'input-field-' + chatName).set "Chatting in " + chatName + "whoho"
       browser.text_field(id: 'input-field-' + chatName).send_keys :enter
     end

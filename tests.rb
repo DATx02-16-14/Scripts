@@ -11,7 +11,7 @@ class Tests
   include GameTest
   def chat
     threads = []
-    (0..10).each do
+    (0..20).each do
       threads << Thread.new do
         headless = Headless.new
         headless.start
@@ -25,11 +25,12 @@ class Tests
 
         case prng.rand(2)
         when 0
-          chat_test browser 25
+          chat_test browser, 2500
         when 1
           create_game browser
+          chat_test browser, 2500
         else
-          chat_test browser 25
+          chat_test browser, 2500
         end
         browser.close
       end
