@@ -12,11 +12,11 @@ module GameTest
     browser.text_field(id: 'game-name-field').wait_until_present 100
     prng = Random.new
     browser.text_field(id: 'game-name-field').set (0...10).map { ('a'..'z').to_a[rand(26)] }.join
-    browser.text_field(id: 'game-name-field').send_keys :enter
+    browser.button(id: 'game-name-btn').click
     browser.text_field(id: 'set-password-field').set "LOL best password" + prng.rand(10000).to_s
-    browser.text_field(id: 'set-password-field').send_keys :enter
+    browser.button(id: 'set-password-btn').click
     browser.text_field(id: 'max-number-field').set "4" + prng.rand(10000).to_s
-    browser.text_field(id: 'max-number-field').send_keys :enter
+    browser.button(id: 'max-number-btn').click
   end
 
 end
